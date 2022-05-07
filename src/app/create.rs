@@ -42,11 +42,11 @@ impl Run for Create {
             None => {
                 let mut s = String::new();
 
-                println!(".bash_aliases does not exist! Do you wish to create it? (y/n)");
+                println!(".bash_aliases does not exist! Do you want to create it? (y/n)");
 
                 io::stdin().read_line(&mut s)?;
 
-                if s.to_ascii_lowercase() == "y" {
+                if s.to_ascii_lowercase().trim() == &String::from("y") {
                     println!("Creating .bash_aliases ...");
                     let mut h = home::home_dir().unwrap();
                     h.push(".bash_aliases");
