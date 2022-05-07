@@ -2,7 +2,7 @@
 
 # Much to come, lots to do
 nomen is still very much a work in progress. There are some immediate features that will follow shortly:
-- Finish implementing update, remove, and list
+- Finish implementing remove, and list
 - Add a config command to configure where to place aliases
 - Add more rebust error handling
 
