@@ -12,8 +12,12 @@ impl Run for Update {
         let p = match utils::get_alias_file() {
             Some(p) => p,
             None => {
-                bail!(".bash_aliases was not found! try running: 
-                        nomen create --name <NAME> --command <COMMAND> to create a new .bash_aliases file");
+                let mut cmd = App::command();
+                cmd.error(
+                    ErrorKind::Io,
+                    ".bash_aliases was not found! try running: 
+                        nomen create --name <NAME> --command <COMMAND> to create a new .bash_aliases file"
+                ).exit();
             }
         };
 
