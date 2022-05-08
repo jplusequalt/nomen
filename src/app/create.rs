@@ -26,7 +26,7 @@ impl Run for Create {
         } else {
             if let Err(_) = Command::new(args.get(0).unwrap())
                 .args(args[1..].to_vec())
-                .spawn()
+                .output()
             {
                 let err_msg = format!(
                     "the command '{}' with the following arguments '{}' is not valid",

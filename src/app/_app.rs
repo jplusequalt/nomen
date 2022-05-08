@@ -44,7 +44,8 @@ pub struct Update {
 
 #[derive(Parser)]
 pub struct Remove {
-    name: String,
+    #[clap(short, required = true)]
+    pub name: String,
 }
 
 #[derive(Parser)]

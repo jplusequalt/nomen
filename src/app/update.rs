@@ -15,8 +15,7 @@ impl Run for Update {
                 let mut cmd = App::command();
                 cmd.error(
                     ErrorKind::Io,
-                    ".bash_aliases was not found! try running: 
-                        nomen create --name <NAME> --command <COMMAND> to create a new .bash_aliases file"
+                    ".bash_aliases was not found! try running: nomen create --name <NAME> --command <COMMAND> to create a new .bash_aliases file"
                 ).exit();
             }
         };
