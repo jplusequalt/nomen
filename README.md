@@ -15,9 +15,11 @@ Add nomen to your path by adding the following to your .bashrc file:
 
 `export PATH=$PATH:/where_you_saved_the_repo/nomen/target/release`
 
-Verify that nomen is working by running:
+Verify that nomen is working by running `nomen --version`:
 
-```nomen 0.1.0
+```
+
+nomen 0.1.0
 
 USAGE:
     nomen <SUBCOMMAND>
