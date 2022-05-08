@@ -4,13 +4,20 @@
 The following is subject to change as I am still new to packaging, and the steps to get this up and running are a bit awkward:
 
 Clone the repo
+
 `git clone https://github.com/jplusequalt/nomen.git`
+
 Build the project (you will need Cargo/rustc):
+
 `cargo build --release`
+
 Add nomen to your path by adding the following to your .bashrc file:
+
 `export PATH=$PATH:/where_you_saved_the_repo/nomen/target/release`
+
 Verify that nomen is working by running:
-`nomen 0.1.0
+
+```nomen 0.1.0
 
 USAGE:
     nomen <SUBCOMMAND>
@@ -25,7 +32,7 @@ SUBCOMMANDS:
     list      List aliases
     remove    Remove aliases
     update    Update existing aliases
-`
+```
 
 ## Much to come, lots to do
 nomen is still very much a work in progress. There are some immediate features that will follow shortly:
