@@ -24,10 +24,11 @@ impl Run for Create {
                 bail!(err_msg);
             }
         } else {
-            if let Err(_) = Command::new(args.get(0).unwrap())
+            let status = Command::new(args.get(0).unwrap())
                 .args(args[1..].to_vec())
                 .output()
-            {
+                .expect("Error!");
+            if !status.status.success() {
                 let err_msg = format!(
                     "the command '{}' with the following arguments '{}' is not valid",
                     args.get(0).unwrap(),
