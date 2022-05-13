@@ -19,6 +19,11 @@ impl Run for Create {
 
             p = utils::strip_home_prefix(&mut p).unwrap();
 
+            if !p.is_absolute() {
+                command = String::from("cd ");
+                command.push_str(&p.canonicalize()?.to_str().unwrap());
+            }
+
             if !p.exists() {
                 let err_msg = format!("the path '{}' does not exist", p.display());
                 bail!(err_msg);
@@ -39,7 +44,7 @@ impl Run for Create {
         }
 
         let mut file = match utils::get_alias_file() {
-            Some(p) => OpenOptions::new().append(true).open(p).unwrap(),
+            Some(p) => OpenOptions::new().append(true).open(&p).unwrap(),
             None => {
                 let mut s = String::new();
 

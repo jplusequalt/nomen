@@ -38,7 +38,9 @@ impl Run for Remove {
             .collect::<Vec<String>>();
 
         if num_lines > lines.len() {
-            std::fs::write(&p, lines.join("\n")).expect("Error writing to .bash_aliases!");
+            let mut joined = lines.join("\n");
+            joined.push_str("\n");
+            std::fs::write(&p, joined).expect("Error writing to .bash_aliases!");
             println!("Removed alias: {}", self.name);
         } else {
             bail!("no alias named {}", self.name);
